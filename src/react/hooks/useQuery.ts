@@ -324,7 +324,9 @@ export function useQuery<
       error: void 0,
       networkStatus: NetworkStatus.ready,
     };
-  } else if (result.errors && result.errors.length) {
+  }
+
+  if (result.errors && result.errors.length) {
     // Until a set naming convention for networkError and graphQLErrors is
     // decided upon, we map errors (graphQLErrors) to the error options.
     // TODO: Is it possible for both result.error and result.errors to be defined here?
